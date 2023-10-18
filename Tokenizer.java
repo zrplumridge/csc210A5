@@ -13,6 +13,9 @@ public class Tokenizer {
   /** Pattern that matches on arithmetic symbols */
   public static final String SYMBOL = "[^\\w]";
 
+  /** Storage of input ot pass to PostFix.java */
+  ArrayDeque inputQueue = new ArrayDeque; 
+
   /** 
    *  Converts the input string to a queue of tokens 
    *  @param input  the string to convert
@@ -32,13 +35,20 @@ public class Tokenizer {
     
     while (scanner.hasNext()) {
       if (scanner.hasNextDouble()) {
-        System.out.println(scanner.nextDouble());
+        inputQueue.addFirst(scanner.nextDouble());
+        //System.out.println(scanner.nextDouble());
+        
       } else if (scanner.hasNext(WORD)) {
-        System.out.println(scanner.next(WORD));
+        inputQueue.addFirst(scanner.next(WORD));
+        //System.out.println(scanner.next(WORD));
+
       } else if (scanner.hasNext(SYMBOL)) {
-        System.out.println(scanner.next(SYMBOL).charAt(0));
+        inputQueue.addFirst(scanner.next(SYMBOL).charAt(0));
+        //System.out.println(scanner.next(SYMBOL).charAt(0));
+
       } else {
-        System.out.println(scanner.next());
+        inputQueue.addFirst(scanner.next());
+        //System.out.println(scanner.next());
       }
     }
   }
