@@ -7,6 +7,9 @@ import java.io.StringReader;
  *  @version 26 September 2013
  */
 public class Tokenizer {
+  System.out.println("Running Tokenizer");
+
+  
   /** Pattern that matches on words */
   public static final String WORD = "[a-zA-Z]*\\b";
 
@@ -51,6 +54,9 @@ public class Tokenizer {
         //System.out.println(scanner.next());
       }
     }
+
+    System.out.println(inputQueue);
+    PostFix(inputDeque);
   }
 
   /** Run short test */
