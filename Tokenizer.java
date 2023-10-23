@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.io.StringReader;
+import java.util.ArrayDeque;
 
 /** 
  *  Shows use of StreamTokenizer.
@@ -13,8 +14,8 @@ public class Tokenizer {
   /** Pattern that matches on arithmetic symbols */
   public static final String SYMBOL = "[^\\w]";
 
-  /** Storage of input ot pass to PostFix.java */
-  ArrayDeque inputQueue = new ArrayDeque; 
+  /** Storage of input to pass to PostFix.java */
+  ArrayDeque<E> inputQueue = new ArrayDeque<E>(); 
 
   /** 
    *  Converts the input string to a queue of tokens 
@@ -35,11 +36,11 @@ public class Tokenizer {
     
     while (scanner.hasNext()) {
       if (scanner.hasNextDouble()) {
-        inputQueue.addFirst(scanner.nextDouble());
+        inputQueue.push(scanner.nextDouble());
         //System.out.println(scanner.nextDouble());
         
       } else if (scanner.hasNext(WORD)) {
-        inputQueue.addFirst(scanner.next(WORD));
+        inputQueue.push(scanner.next(WORD));
         //System.out.println(scanner.next(WORD));
 
       } else if (scanner.hasNext(SYMBOL)) {
