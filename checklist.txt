@@ -13,9 +13,9 @@ your work, please indicate the status of each item
 
 Postfix.java:
 
-_____ 1 pts: Pushes numeric tokens onto the stack
+YES 1 pts: Pushes numeric tokens onto the stack
 
-_____ 2 pts: Processes operators by popping & combining numbers
+YES 2 pts: Processes operators by popping & combining numbers
 
 _____ 2 pts: Produces correct answer to any valid postfix expression
 

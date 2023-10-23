@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.io.StringReader;
+import java.util.ArrayDeque;
 
 /** 
  *  Shows use of StreamTokenizer.
